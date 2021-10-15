@@ -1,0 +1,25 @@
+{
+  "name": "groupme-api-types",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/not-so-smart/groupme-api-types.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/not-so-smart/groupme-api-types/issues"
+  },
+  "homepage": "https://github.com/not-so-smart/groupme-api-types#readme",
+  "devDependencies": {
+    "typescript": "^4.4.4"
+  },
+  "files": [
+    "**/*.{d.ts,d.ts.map,js,js.map}" 
+  ]
+}
