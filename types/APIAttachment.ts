@@ -1,14 +1,14 @@
 export type APIAttachment =
-    Reply |
-    Image |
-    Mention |
-    Emoji |
-    Video |
-    Poll |
-    LinkedImage |
-    File |
-    CalendarEvent |
-    AutokickedMember;
+    | Reply 
+    | Image 
+    | Mention 
+    | Emoji 
+    | Video 
+    | Poll 
+    | LinkedImage 
+    | File 
+    | CalendarEvent 
+    | AutokickedMember
 
 interface AutokickedMember {
     type:    "autokicked_member",
@@ -29,7 +29,7 @@ interface CalendarEvent {
 
 enum View {
     Brief = "brief",
-    Full = "full",
+    Full =  "full",
 }
 
 interface File {
