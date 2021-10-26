@@ -20,7 +20,7 @@
     "typescript": "^4.4.4"
   },
   "files": [
-    "**/*.{d.ts,d.ts.map,js,js.map}" 
+    "**/*.{d.ts,d.ts.map,js,js.map}"
   ],
   "types": "index.d.ts"
 }
