@@ -8,14 +8,14 @@ export interface APIGroup {
     group_id:                 string;
     id:                       string;
     image_url:                null | string;
-    join_question:            null | JoinQuestion;
-    like_icon:                null | LikeIcon;
+    join_question:            null | GroupJoinQuestion;
+    like_icon:                null | GroupLikeIcon;
     max_members:              number;
     max_memberships?:         number;
     members:                  null | APIMember[];
-    message_deletion_mode?:   MessageDeletionMode[];
+    message_deletion_mode?:   GroupMessageDeletionMode[];
     message_deletion_period?: number;
-    messages:                 MessagesResponse;
+    messages:                 GroupMessagesResponse;
     muted_until?:             number | null;
     name:                     string;
     office_mode:              boolean;
@@ -30,43 +30,43 @@ export interface APIGroup {
     updated_at:               number;
 }
 
-interface JoinQuestion {
-    type: JoinReason;
+export interface GroupJoinQuestion {
+    type: GroupJoinReason;
     text: string;
 }
 
-enum JoinReason {
+export enum GroupJoinReason {
     JoinReasonQuestionsText = "join_reason/questions/text",
 }
 
-interface LikeIcon {
+export interface GroupLikeIcon {
     pack_id:    number;
     pack_index: number;
     type:       string;
 }
 
-enum MessageDeletionMode {
+export enum GroupMessageDeletionMode {
     Creator = "creator",
     Sender = "sender",
 }
 
-interface MessagesResponse {
+export interface GroupMessagesResponse {
     count:                   number;
     last_message_created_at: number | null;
     last_message_id:         null | string;
-    preview:                 Preview;
+    preview:                 GroupMessagePreview;
 }
 
-interface Preview {
+export interface GroupMessagePreview {
     attachments:     APIAttachment[];
     deleted_at?:     number;
-    deletion_actor?: MessageDeletionMode;
+    deletion_actor?: GroupMessageDeletionMode;
     image_url:       null | string;
     nickname:        null | string;
     text:            null | string;
 }
 
-enum GroupType {
+export enum GroupType {
     Closed = "closed",
     Private = "private",
 }

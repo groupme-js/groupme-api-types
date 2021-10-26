@@ -1,38 +1,38 @@
 export type APIGroupEvent =
-    BotAdd |
-    BotDel |
+    | BotAddEvent
+    | BotDelEvent
 
-    CalendarEventCreated |
-    CalendarEventStarting |
-    CalendarEventUserGoing |
-    CalendarEventUserNotGoing |
-    CalendarEventUserUndecided |
+    | CalendarEventCreatedEvent
+    | CalendarEventStartingEvent
+    | CalendarEventUserGoingEvent
+    | CalendarEventUserNotGoingEvent
+    | CalendarEventUserUndecidedEvent
 
-    GroupAddedToDirectory |
-    GroupAvatarChange |
-    GroupLikeIconSet |
-    GroupNameChange |
-    GroupOfficeModeDisabled |
-    GroupOfficeModeEnabled |
-    GroupRoleChangeAdmin |
-    GroupThemeChange |
-    GroupTopicChange |
-    GroupTypeChange |
+    | GroupAddedToDirectoryEvent
+    | GroupAvatarChangeEvent
+    | GroupLikeIconSetEvent
+    | GroupNameChangeEvent
+    | GroupOfficeModeDisabledEvent
+    | GroupOfficeModeEnabledEvent
+    | GroupRoleChangeAdminEvent
+    | GroupThemeChangeEvent
+    | GroupTopicChangeEvent
+    | GroupTypeChangeEvent
 
-    MembershipAnnounceAdded |
-    MembershipAnnounceJoined |
-    MembershipAnnounceRejoined |
-    MembershipAvatarChanged |
-    MembershipNicknameChanged |
-    MembershipNotificationsAutokicked |
-    MembershipNotificationsExited |
-    MembershipNotificationsRemoved |
+    | MembershipAnnounceAddedEvent
+    | MembershipAnnounceJoinedEvent
+    | MembershipAnnounceRejoinedEvent
+    | MembershipAvatarChangedEvent
+    | MembershipNicknameChangedEvent
+    | MembershipNotificationsAutokickedEvent
+    | MembershipNotificationsExitedEvent
+    | MembershipNotificationsRemovedEvent
 
-    MessageDeleted |
+    | MessageDeletedEvent
 
-    PollCreated |
-    PollFinished |
-    PollReminder;
+    | PollCreatedEvent
+    | PollFinishedEvent
+    | PollReminderEvent
 
 
 
@@ -50,7 +50,7 @@ interface UserWeird { // the API is very inconsistent lol
 
 
 /* TOP-LEVEL */
-export interface BotAdd {
+export interface BotAddEvent {
     type: "bot.add",
     data: {
         user: User,
@@ -59,7 +59,7 @@ export interface BotAdd {
 }
 
 /* TOP-LEVEL */
-export interface BotDel {
+export interface BotDelEvent {
     type: "bot.del",
     data: {
         user: User,
@@ -70,7 +70,7 @@ export interface BotDel {
 
 
 /* TOP-LEVEL */
-export interface CalendarEventCreated {
+export interface CalendarEventCreatedEvent {
     type: "calendar.event.created",
     data: {
         event: {
@@ -83,7 +83,7 @@ export interface CalendarEventCreated {
 }
 
 /* TOP-LEVEL */
-export interface CalendarEventStarting {
+export interface CalendarEventStartingEvent {
     type: "calendar.event.starting",
     data: {
         event_name: string,
@@ -92,19 +92,19 @@ export interface CalendarEventStarting {
 }
 
 /* TOP-LEVEL */
-export interface CalendarEventUserGoing {
+export interface CalendarEventUserGoingEvent {
     type: "calendar.event.user.going",
     data: CalendarEventUserData,
 }
 
 /* TOP-LEVEL */
-export interface CalendarEventUserNotGoing {
+export interface CalendarEventUserNotGoingEvent {
     type: "calendar.event.user.not_going",
     data: CalendarEventUserData,
 }
 
 /* TOP-LEVEL */
-export interface CalendarEventUserUndecided {
+export interface CalendarEventUserUndecidedEvent {
     type: "calendar.event.user.undecided",
     data: CalendarEventUserData,
 }
@@ -120,7 +120,7 @@ interface CalendarEventUserData {
 
 
 /* TOP-LEVEL */
-export interface GroupAddedToDirectory {
+export interface GroupAddedToDirectoryEvent {
     type: "group.added_to_directory",
     data: {
         user:           User,
@@ -129,7 +129,7 @@ export interface GroupAddedToDirectory {
 }
 
 /* TOP-LEVEL */
-export interface GroupAvatarChange {
+export interface GroupAvatarChangeEvent {
     type: "group.avatar_change",
     data: {
         user:       User,
@@ -138,7 +138,7 @@ export interface GroupAvatarChange {
 }
 
 /* TOP-LEVEL */
-export interface GroupLikeIconSet {
+export interface GroupLikeIconSetEvent {
     type: "group.like_icon_set",
     data: {
         user:      User,
@@ -151,7 +151,7 @@ export interface GroupLikeIconSet {
 }
 
 /* TOP-LEVEL */
-export interface GroupNameChange {
+export interface GroupNameChangeEvent {
     type: "group.name_change",
     data: {
         user: User,
@@ -160,7 +160,7 @@ export interface GroupNameChange {
 }
 
 /* TOP-LEVEL */
-export interface GroupOfficeModeDisabled {
+export interface GroupOfficeModeDisabledEvent {
     type: "group.office_mode_disabled",
     data: {
         user: User,
@@ -168,7 +168,7 @@ export interface GroupOfficeModeDisabled {
 }
 
 /* TOP-LEVEL */
-export interface GroupOfficeModeEnabled {
+export interface GroupOfficeModeEnabledEvent {
     type: "group.office_mode_enabled",
     data: {
         user: User,
@@ -176,7 +176,7 @@ export interface GroupOfficeModeEnabled {
 }
 
 /* TOP-LEVEL */
-export interface GroupRoleChangeAdmin {
+export interface GroupRoleChangeAdminEvent {
     type: "group.role_change_admin",
     data: {
         user:   User,
@@ -186,7 +186,7 @@ export interface GroupRoleChangeAdmin {
 }
 
 /* TOP-LEVEL */
-export interface GroupThemeChange {
+export interface GroupThemeChangeEvent {
     type: "group.theme_change",
     data: {
         user:       User,
@@ -195,7 +195,7 @@ export interface GroupThemeChange {
 }
 
 /* TOP-LEVEL */
-export interface GroupTopicChange {
+export interface GroupTopicChangeEvent {
     type: "group.topic_change",
     data: {
         user:  User,
@@ -204,7 +204,7 @@ export interface GroupTopicChange {
 }
 
 /* TOP-LEVEL */
-export interface GroupTypeChange {
+export interface GroupTypeChangeEvent {
     type: "group.type_change",
     data: {
         user: User,
@@ -215,7 +215,7 @@ export interface GroupTypeChange {
 
 
 /* TOP-LEVEL */
-export interface MembershipAnnounceAdded {
+export interface MembershipAnnounceAddedEvent {
     type: "membership.announce.added",
     data: {
         added_users: User[],
@@ -224,7 +224,7 @@ export interface MembershipAnnounceAdded {
 }
 
 /* TOP-LEVEL */
-export interface MembershipAnnounceJoined {
+export interface MembershipAnnounceJoinedEvent {
     type: "membership.announce.joined",
     data: {
         user: User,
@@ -232,7 +232,7 @@ export interface MembershipAnnounceJoined {
 }
 
 /* TOP-LEVEL */
-export interface MembershipAnnounceRejoined {
+export interface MembershipAnnounceRejoinedEvent {
     type: "membership.announce.rejoined",
     data: {
         user: User,
@@ -240,7 +240,7 @@ export interface MembershipAnnounceRejoined {
 }
 
 /* TOP-LEVEL */
-export interface MembershipAvatarChanged {
+export interface MembershipAvatarChangedEvent {
     type: "membership.avatar_changed",
     data: {
         user:       User,
@@ -249,7 +249,7 @@ export interface MembershipAvatarChanged {
 }
 
 /* TOP-LEVEL */
-export interface MembershipNicknameChanged {
+export interface MembershipNicknameChangedEvent {
     type: "membership.nickname_changed",
     data: {
         user: User,
@@ -258,7 +258,7 @@ export interface MembershipNicknameChanged {
 }
 
 /* TOP-LEVEL */
-export interface MembershipNotificationsAutokicked {
+export interface MembershipNotificationsAutokickedEvent {
     type: "membership.notifications.autokicked",
     data: {
         user: User,
@@ -266,7 +266,7 @@ export interface MembershipNotificationsAutokicked {
 }
 
 /* TOP-LEVEL */
-export interface MembershipNotificationsExited {
+export interface MembershipNotificationsExitedEvent {
     type: "membership.notifications.exited",
     data: {
         removed_user: User,
@@ -274,7 +274,7 @@ export interface MembershipNotificationsExited {
 }
 
 /* TOP-LEVEL */
-export interface MembershipNotificationsRemoved {
+export interface MembershipNotificationsRemovedEvent {
     type: "membership.notifications.removed",
     data: {
         remover_user: User,
@@ -285,7 +285,7 @@ export interface MembershipNotificationsRemoved {
 
 
 /* TOP-LEVEL */
-export interface MessageDeleted {
+export interface MessageDeletedEvent {
     type: "message.deleted",
     data: {
         message_id:     string,
@@ -298,7 +298,7 @@ export interface MessageDeleted {
 
 
 /* TOP-LEVEL */
-export interface PollCreated {
+export interface PollCreatedEvent {
     type: "poll.created",
     data: {
         conversation: {
@@ -313,7 +313,7 @@ export interface PollCreated {
 }
 
 /* TOP-LEVEL */
-export interface PollReminder {
+export interface PollReminderEvent {
     type: "poll.reminder",
     data: {
         conversation: {
@@ -328,7 +328,7 @@ export interface PollReminder {
 }
 
 /* TOP-LEVEL */
-export interface PollFinished {
+export interface PollFinishedEvent {
     type: "poll.finished",
     data: {
         conversation: {

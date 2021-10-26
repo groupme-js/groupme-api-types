@@ -1,27 +1,27 @@
 export type APIAttachment =
-    | Reply 
-    | Image 
-    | Mention 
-    | Emoji 
-    | Video 
-    | Poll 
-    | LinkedImage 
-    | File 
-    | CalendarEvent 
-    | AutokickedMember
+    | ReplyAttachment 
+    | ImageAttachment 
+    | MentionAttachment 
+    | EmojiAttachment 
+    | VideoAttachment 
+    | PollAttachment 
+    | LinkedImageAttachment 
+    | FileAttachment 
+    | CalendarEventAttachment 
+    | AutokickedMemberAttachment
 
-interface AutokickedMember {
+export interface AutokickedMemberAttachment {
     type:    "autokicked_member",
     user_id: string,
 }
 
-interface Emoji {
+export interface EmojiAttachment {
     type:        "emoji",
     placeholder: "�",
     charmap:     Array<number[]>,
 }
 
-interface CalendarEvent {
+export interface CalendarEventAttachment {
     type:     "event",
     view:     View,
     event_id: string,
@@ -32,41 +32,41 @@ enum View {
     Full =  "full",
 }
 
-interface File {
+export interface FileAttachment {
     type:    "file",
     file_id: string,
 }
 
-interface Image {
+export interface ImageAttachment {
     type:        "image",
     url:         string,
     source_url?: string,
 }
 
-interface LinkedImage {
+export interface LinkedImageAttachment {
     type: "linked_image",
     url:  string,
 }
 
-interface Mention {
+export interface MentionAttachment {
     type:     "mentions",
     loci:     Array<number[]>,
     user_ids: string[],
 }
 
-interface Poll {
+export interface PollAttachment {
     type:    "poll",
     poll_id: string,
 }
 
-interface Reply {
+export interface ReplyAttachment {
     type:          "reply",
     user_id:       string,
     reply_id:      string,
     base_reply_id: string,
 }
 
-interface Video {
+export interface VideoAttachment {
     type:        "video",
     preview_url: string,
     url:         string,

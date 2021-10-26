@@ -4,13 +4,13 @@ export interface APIPoll {
     user_votes?: string[];
 }
 
-interface PollData {
+export interface PollData {
     conversation_id: string;
     created_at:      number;
     expiration:      number;
     id:              string;
     last_modified:   number;
-    options:         Option[];
+    options:         PollOptionData[];
     owner_id:        string;
     status:          PollStatus;
     subject:         string;
@@ -18,24 +18,24 @@ interface PollData {
     visibility:      PollVisibility;
 }
 
-interface Option {
+export interface PollOptionData {
     id:         string;
     title:      string;
     voter_ids?: string[];
     votes?:     number;
 }
 
-enum PollStatus {
+export enum PollStatus {
     Active = "active",
     Past = "past",
 }
 
-enum PollType {
+export enum PollType {
     Multi = "multi",
     Single = "single",
 }
 
-enum PollVisibility {
+export enum PollVisibility {
     Anonymous = "anonymous",
     Public = "public",
 }

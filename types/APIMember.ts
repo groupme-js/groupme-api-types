@@ -5,11 +5,11 @@ export interface APIMember {
     muted:      boolean;
     name:       string;
     nickname:   string;
-    roles:      Role[];
+    roles:      MemberRole[];
     user_id:    string;
 }
 
-enum Role {
+export enum MemberRole {
     Admin = "admin",
     Owner = "owner",
     User = "user",

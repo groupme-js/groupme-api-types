@@ -10,7 +10,7 @@ export interface APIMessage {
     id:              string;
     name:            string;
     sender_id:       string;
-    sender_type:     SenderType;
+    sender_type:     MessageSenderType;
     source_guid:     string;
     system:          boolean;
     text:            null | string;
@@ -18,10 +18,10 @@ export interface APIMessage {
     platform:        Platform;
     event?:          APIGroupEvent;
     deleted_at?:     number;
-    deletion_actor?: DeletionActor;
+    deletion_actor?: MessageDeletionActor;
 }
 
-enum DeletionActor {
+export enum MessageDeletionActor {
     Sender = "sender",
 }
 
@@ -29,8 +29,8 @@ enum Platform {
     Gm = "gm",
 }
 
-enum SenderType {
+export enum MessageSenderType {
     Service = "service",
-    System = "system",
-    User = "user",
+    System =  "system",
+    User =    "user",
 }
