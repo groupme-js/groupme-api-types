@@ -1,5 +1,6 @@
 import type { APIAttachment } from "./APIAttachment";
 import type { APIMember } from "./APIMember";
+import type { MessageDeletionMode } from "./Constants";
 
 export interface APIGroup {
     created_at:               number;
@@ -13,7 +14,7 @@ export interface APIGroup {
     max_members:              number;
     max_memberships?:         number;
     members:                  null | APIMember[];
-    message_deletion_mode?:   GroupMessageDeletionMode[];
+    message_deletion_mode?:   MessageDeletionMode[];
     message_deletion_period?: number;
     messages:                 GroupMessagesResponse;
     muted_until?:             number | null;
@@ -45,11 +46,6 @@ export interface GroupLikeIcon {
     type:       string;
 }
 
-export enum GroupMessageDeletionMode {
-    Creator = "creator",
-    Sender = "sender",
-}
-
 export interface GroupMessagesResponse {
     count:                   number;
     last_message_created_at: number | null;
@@ -60,7 +56,7 @@ export interface GroupMessagesResponse {
 export interface GroupMessagePreview {
     attachments:     APIAttachment[];
     deleted_at?:     number;
-    deletion_actor?: GroupMessageDeletionMode;
+    deletion_actor?: MessageDeletionMode;
     image_url:       null | string;
     nickname:        null | string;
     text:            null | string;
