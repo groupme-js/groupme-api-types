@@ -1,4 +1,5 @@
 export * from "./APIAttachment";
+export * from "./APIChat";
 export * from "./APIGroup";
 export * from "./APIGroupEvent";
 export * from "./APIMember";
