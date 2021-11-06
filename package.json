@@ -1,6 +1,6 @@
 {
   "name": "groupme-api-types",
-  "version": "0.6.0",
+  "version": "0.7.0",
   "description": "TypeScript typings for the GroupMe API",
   "main": "index.js",
   "scripts": {
