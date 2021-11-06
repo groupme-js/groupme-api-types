@@ -1,7 +1,7 @@
 import type { APIMember } from "../types/APIMember";
 
 /**
- * https://github.com/2CATteam/GroupMeCommunityDocs/blob/master/members.md#add-members
+ * https://github.com/groupme-js/GroupMeCommunityDocs/blob/master/members.md#add-members
  */
 export interface PostMembersBody {
     members: ({
@@ -16,7 +16,7 @@ export interface PostMembersBody {
 }
 
 /**
- * https://github.com/2CATteam/GroupMeCommunityDocs/blob/master/members.md#add-members
+ * https://github.com/groupme-js/GroupMeCommunityDocs/blob/master/members.md#add-members
  */
 export interface PostMembersResponse {
     results_id: string;
@@ -24,7 +24,7 @@ export interface PostMembersResponse {
 
 /**
  * TODO: investigate other discrepancies between this response and normal APIMembers
- * https://github.com/2CATteam/GroupMeCommunityDocs/blob/master/members.md#fetch-add-results
+ * https://github.com/groupme-js/GroupMeCommunityDocs/blob/master/members.md#fetch-add-results
  */
 export interface GetMembersAddResultsResponse {
     members: (APIMember & { guid: string })[];
@@ -32,17 +32,17 @@ export interface GetMembersAddResultsResponse {
 
 /**
  * TODO: does this work with a DELETE request? that would make more sense here
- * https://github.com/2CATteam/GroupMeCommunityDocs/blob/master/members.md#remove-member
+ * https://github.com/groupme-js/GroupMeCommunityDocs/blob/master/members.md#remove-member
  */
 export type PostMemberRemoveBody = never;
 
 /**
- * https://github.com/2CATteam/GroupMeCommunityDocs/blob/master/members.md#remove-member
+ * https://github.com/groupme-js/GroupMeCommunityDocs/blob/master/members.md#remove-member
  */
 export type PostMemberRemoveResponse = never;
 
 /**
- * https://github.com/2CATteam/GroupMeCommunityDocs/blob/master/members.md#change-nickname
+ * https://github.com/groupme-js/GroupMeCommunityDocs/blob/master/members.md#change-nickname
  */
 export interface PostMemberUpdateBody {
     membership: {
@@ -52,6 +52,6 @@ export interface PostMemberUpdateBody {
 
 /**
  * TODO: investigate possible discrepancies
- * https://github.com/2CATteam/GroupMeCommunityDocs/blob/master/members.md#change-nickname
+ * https://github.com/groupme-js/GroupMeCommunityDocs/blob/master/members.md#change-nickname
  */
 export type PostMemberUpdateResponse = APIMember;
