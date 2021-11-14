@@ -1,7 +1,7 @@
-import type { APIAttachment } from "./APIAttachment";
-import type { APIGroupEvent } from "./APIGroupEvent";
+import type { APIAttachment, APIGroupEvent } from "..";
+import type { MessageDeletionActor, MessageSenderType } from "./Constants";
 
-export interface APIMessage {
+export interface APIGroupMessage {
     attachments:     APIAttachment[];
     avatar_url:      null | string;
     created_at:      number;
@@ -21,16 +21,6 @@ export interface APIMessage {
     deletion_actor?: MessageDeletionActor;
 }
 
-export enum MessageDeletionActor {
-    Sender = "sender",
-}
-
 enum Platform {
     Gm = "gm",
-}
-
-export enum MessageSenderType {
-    Service = "service",
-    System =  "system",
-    User =    "user",
 }
