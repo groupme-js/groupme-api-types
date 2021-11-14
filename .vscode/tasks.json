@@ -6,8 +6,21 @@
         {
             "label": "clean",
             "type": "shell",
-            "command": "rm **/*.d.ts; rm **/*.js; rm **/*.d.ts.map; rm **/*.js.map;",
-            "problemMatcher": []
+            "command": [
+                "rm **/*.d.ts;",
+                "rm **/*.js;",
+                "rm **/*.d.ts.map;",
+                "rm **/*.js.map;",
+                "rm *.d.ts;",
+                "rm *.js;",
+                "rm *.d.ts.map;",
+                "rm *.js.map;"
+            ],
+            "problemMatcher": [],
+            "group": {
+                "kind": "build",
+                "isDefault": true
+            }
         }
     ]
 }
