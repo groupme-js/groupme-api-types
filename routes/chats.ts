@@ -23,6 +23,13 @@ export type ReadReceipt = {
 }
 
 /**
+ * TODO: add documentation on GroupMeCommunityDocs
+ */
+export interface GetChatMessageResponse {
+    message: APIChatMessage;
+}
+
+/**
  * https://github.com/groupme-js/GroupMeCommunityDocs/blob/master/dms.md#send-dm
  */
 export interface PostChatMessageBody {
