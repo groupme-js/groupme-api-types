@@ -3,7 +3,7 @@ import type { APIMember } from "../types/APIMember";
 /**
  * https://github.com/groupme-js/GroupMeCommunityDocs/blob/master/members.md#add-members
  */
-export interface PostMembersBody {
+export type PostMembersBody = {
     members: ({
         nickname: string;
         guid: string;
@@ -18,7 +18,7 @@ export interface PostMembersBody {
 /**
  * https://github.com/groupme-js/GroupMeCommunityDocs/blob/master/members.md#add-members
  */
-export interface PostMembersResponse {
+export type PostMembersResponse = {
     results_id: string;
 }
 
@@ -26,7 +26,7 @@ export interface PostMembersResponse {
  * TODO: investigate other discrepancies between this response and normal APIMembers
  * https://github.com/groupme-js/GroupMeCommunityDocs/blob/master/members.md#fetch-add-results
  */
-export interface GetMembersAddResultsResponse {
+export type GetMembersAddResultsResponse = {
     members: (APIMember & { guid: string })[];
 }
 
@@ -44,7 +44,7 @@ export type PostMemberRemoveResponse = never;
 /**
  * https://github.com/groupme-js/GroupMeCommunityDocs/blob/master/members.md#change-nickname
  */
-export interface PostMemberUpdateBody {
+export type PostMemberUpdateBody = {
     membership: {
         nickname: string;
     }

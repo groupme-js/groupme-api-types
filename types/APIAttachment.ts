@@ -10,18 +10,18 @@ export type APIAttachment =
     | CalendarEventAttachment 
     | AutokickedMemberAttachment
 
-export interface AutokickedMemberAttachment {
+export type AutokickedMemberAttachment = {
     type:    "autokicked_member",
     user_id: string,
 }
 
-export interface EmojiAttachment {
+export type EmojiAttachment = {
     type:        "emoji",
     placeholder: "�",
     charmap:     Array<number[]>,
 }
 
-export interface CalendarEventAttachment {
+export type CalendarEventAttachment = {
     type:     "event",
     view:     View,
     event_id: string,
@@ -32,41 +32,41 @@ enum View {
     Full =  "full",
 }
 
-export interface FileAttachment {
+export type FileAttachment = {
     type:    "file",
     file_id: string,
 }
 
-export interface ImageAttachment {
+export type ImageAttachment = {
     type:        "image",
     url:         string,
     source_url?: string,
 }
 
-export interface LinkedImageAttachment {
+export type LinkedImageAttachment = {
     type: "linked_image",
     url:  string,
 }
 
-export interface MentionAttachment {
+export type MentionAttachment = {
     type:     "mentions",
     loci:     Array<number[]>,
     user_ids: string[],
 }
 
-export interface PollAttachment {
+export type PollAttachment = {
     type:    "poll",
     poll_id: string,
 }
 
-export interface ReplyAttachment {
+export type ReplyAttachment = {
     type:          "reply",
     user_id:       string,
     reply_id:      string,
     base_reply_id: string,
 }
 
-export interface VideoAttachment {
+export type VideoAttachment = {
     type:        "video",
     preview_url: string,
     url:         string,

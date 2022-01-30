@@ -37,12 +37,12 @@ export type APIGroupEvent =
 
 
 
-interface User {
+type User = {
     id:       number,
     nickname: string,
 }
 
-interface UserWeird { // the API is very inconsistent lol
+type UserWeird = { // the API is very inconsistent lol
     id:       string, // some event types use string UIDs
     nickname: string,
 }
@@ -50,7 +50,7 @@ interface UserWeird { // the API is very inconsistent lol
 
 
 /* TOP-LEVEL */
-export interface BotAddEvent {
+export type BotAddEvent = {
     type: "bot.add",
     data: {
         user: User,
@@ -59,7 +59,7 @@ export interface BotAddEvent {
 }
 
 /* TOP-LEVEL */
-export interface BotDelEvent {
+export type BotDelEvent = {
     type: "bot.del",
     data: {
         user: User,
@@ -70,7 +70,7 @@ export interface BotDelEvent {
 
 
 /* TOP-LEVEL */
-export interface CalendarEventCreatedEvent {
+export type CalendarEventCreatedEvent = {
     type: "calendar.event.created",
     data: {
         event: {
@@ -83,7 +83,7 @@ export interface CalendarEventCreatedEvent {
 }
 
 /* TOP-LEVEL */
-export interface CalendarEventStartingEvent {
+export type CalendarEventStartingEvent = {
     type: "calendar.event.starting",
     data: {
         event_name: string,
@@ -92,24 +92,24 @@ export interface CalendarEventStartingEvent {
 }
 
 /* TOP-LEVEL */
-export interface CalendarEventUserGoingEvent {
+export type CalendarEventUserGoingEvent = {
     type: "calendar.event.user.going",
     data: CalendarEventUserData,
 }
 
 /* TOP-LEVEL */
-export interface CalendarEventUserNotGoingEvent {
+export type CalendarEventUserNotGoingEvent = {
     type: "calendar.event.user.not_going",
     data: CalendarEventUserData,
 }
 
 /* TOP-LEVEL */
-export interface CalendarEventUserUndecidedEvent {
+export type CalendarEventUserUndecidedEvent = {
     type: "calendar.event.user.undecided",
     data: CalendarEventUserData,
 }
 
-interface CalendarEventUserData {
+type CalendarEventUserData = {
     event: {
         id:   string,
         name: string,
@@ -120,7 +120,7 @@ interface CalendarEventUserData {
 
 
 /* TOP-LEVEL */
-export interface GroupAddedToDirectoryEvent {
+export type GroupAddedToDirectoryEvent = {
     type: "group.added_to_directory",
     data: {
         user:           User,
@@ -129,7 +129,7 @@ export interface GroupAddedToDirectoryEvent {
 }
 
 /* TOP-LEVEL */
-export interface GroupAvatarChangeEvent {
+export type GroupAvatarChangeEvent = {
     type: "group.avatar_change",
     data: {
         user:       User,
@@ -138,7 +138,7 @@ export interface GroupAvatarChangeEvent {
 }
 
 /* TOP-LEVEL */
-export interface GroupLikeIconSetEvent {
+export type GroupLikeIconSetEvent = {
     type: "group.like_icon_set",
     data: {
         user:      User,
@@ -151,7 +151,7 @@ export interface GroupLikeIconSetEvent {
 }
 
 /* TOP-LEVEL */
-export interface GroupNameChangeEvent {
+export type GroupNameChangeEvent = {
     type: "group.name_change",
     data: {
         user: User,
@@ -160,7 +160,7 @@ export interface GroupNameChangeEvent {
 }
 
 /* TOP-LEVEL */
-export interface GroupOfficeModeDisabledEvent {
+export type GroupOfficeModeDisabledEvent = {
     type: "group.office_mode_disabled",
     data: {
         user: User,
@@ -168,7 +168,7 @@ export interface GroupOfficeModeDisabledEvent {
 }
 
 /* TOP-LEVEL */
-export interface GroupOfficeModeEnabledEvent {
+export type GroupOfficeModeEnabledEvent = {
     type: "group.office_mode_enabled",
     data: {
         user: User,
@@ -176,7 +176,7 @@ export interface GroupOfficeModeEnabledEvent {
 }
 
 /* TOP-LEVEL */
-export interface GroupRoleChangeAdminEvent {
+export type GroupRoleChangeAdminEvent = {
     type: "group.role_change_admin",
     data: {
         user:   User,
@@ -186,7 +186,7 @@ export interface GroupRoleChangeAdminEvent {
 }
 
 /* TOP-LEVEL */
-export interface GroupThemeChangeEvent {
+export type GroupThemeChangeEvent = {
     type: "group.theme_change",
     data: {
         user:       User,
@@ -195,7 +195,7 @@ export interface GroupThemeChangeEvent {
 }
 
 /* TOP-LEVEL */
-export interface GroupTopicChangeEvent {
+export type GroupTopicChangeEvent = {
     type: "group.topic_change",
     data: {
         user:  User,
@@ -204,7 +204,7 @@ export interface GroupTopicChangeEvent {
 }
 
 /* TOP-LEVEL */
-export interface GroupTypeChangeEvent {
+export type GroupTypeChangeEvent = {
     type: "group.type_change",
     data: {
         user: User,
@@ -215,7 +215,7 @@ export interface GroupTypeChangeEvent {
 
 
 /* TOP-LEVEL */
-export interface MembershipAnnounceAddedEvent {
+export type MembershipAnnounceAddedEvent = {
     type: "membership.announce.added",
     data: {
         added_users: User[],
@@ -224,7 +224,7 @@ export interface MembershipAnnounceAddedEvent {
 }
 
 /* TOP-LEVEL */
-export interface MembershipAnnounceJoinedEvent {
+export type MembershipAnnounceJoinedEvent = {
     type: "membership.announce.joined",
     data: {
         user: User,
@@ -232,7 +232,7 @@ export interface MembershipAnnounceJoinedEvent {
 }
 
 /* TOP-LEVEL */
-export interface MembershipAnnounceRejoinedEvent {
+export type MembershipAnnounceRejoinedEvent = {
     type: "membership.announce.rejoined",
     data: {
         user: User,
@@ -240,7 +240,7 @@ export interface MembershipAnnounceRejoinedEvent {
 }
 
 /* TOP-LEVEL */
-export interface MembershipAvatarChangedEvent {
+export type MembershipAvatarChangedEvent = {
     type: "membership.avatar_changed",
     data: {
         user:       User,
@@ -249,7 +249,7 @@ export interface MembershipAvatarChangedEvent {
 }
 
 /* TOP-LEVEL */
-export interface MembershipNicknameChangedEvent {
+export type MembershipNicknameChangedEvent = {
     type: "membership.nickname_changed",
     data: {
         user: User,
@@ -258,7 +258,7 @@ export interface MembershipNicknameChangedEvent {
 }
 
 /* TOP-LEVEL */
-export interface MembershipNotificationsAutokickedEvent {
+export type MembershipNotificationsAutokickedEvent = {
     type: "membership.notifications.autokicked",
     data: {
         user: User,
@@ -266,7 +266,7 @@ export interface MembershipNotificationsAutokickedEvent {
 }
 
 /* TOP-LEVEL */
-export interface MembershipNotificationsExitedEvent {
+export type MembershipNotificationsExitedEvent = {
     type: "membership.notifications.exited",
     data: {
         removed_user: User,
@@ -274,7 +274,7 @@ export interface MembershipNotificationsExitedEvent {
 }
 
 /* TOP-LEVEL */
-export interface MembershipNotificationsRemovedEvent {
+export type MembershipNotificationsRemovedEvent = {
     type: "membership.notifications.removed",
     data: {
         remover_user: User,
@@ -285,7 +285,7 @@ export interface MembershipNotificationsRemovedEvent {
 
 
 /* TOP-LEVEL */
-export interface MessageDeletedEvent {
+export type MessageDeletedEvent = {
     type: "message.deleted",
     data: {
         message_id:     string,
@@ -298,7 +298,7 @@ export interface MessageDeletedEvent {
 
 
 /* TOP-LEVEL */
-export interface PollCreatedEvent {
+export type PollCreatedEvent = {
     type: "poll.created",
     data: {
         conversation: {
@@ -313,7 +313,7 @@ export interface PollCreatedEvent {
 }
 
 /* TOP-LEVEL */
-export interface PollReminderEvent {
+export type PollReminderEvent = {
     type: "poll.reminder",
     data: {
         conversation: {
@@ -328,7 +328,7 @@ export interface PollReminderEvent {
 }
 
 /* TOP-LEVEL */
-export interface PollFinishedEvent {
+export type PollFinishedEvent = {
     type: "poll.finished",
     data: {
         conversation: {
@@ -342,7 +342,7 @@ export interface PollFinishedEvent {
     },
 }
 
-interface Option {
+type Option = {
     id:         string,
     title:      string,
     votes?:     number,

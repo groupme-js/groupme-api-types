@@ -1,4 +1,4 @@
-export interface APIClientUser {
+export type APIClientUser = {
     created_at:         number;
     email:              string;
     facebook_connected: boolean;

@@ -2,7 +2,7 @@ import type { APIAttachment } from "./APIAttachment";
 import type { APIMember } from "./APIMember";
 import type { MessageDeletionMode } from "./Constants";
 
-export interface APIGroup {
+export type APIGroup = {
     created_at:               number;
     creator_user_id:          string;
     description:              string;
@@ -31,7 +31,7 @@ export interface APIGroup {
     updated_at:               number;
 }
 
-export interface GroupJoinQuestion {
+export type GroupJoinQuestion = {
     type: GroupJoinReason;
     text: string;
 }
@@ -40,20 +40,20 @@ export enum GroupJoinReason {
     JoinReasonQuestionsText = "join_reason/questions/text",
 }
 
-export interface GroupLikeIcon {
+export type GroupLikeIcon = {
     pack_id:    number;
     pack_index: number;
     type:       string;
 }
 
-export interface GroupMessagesResponse {
+export type GroupMessagesResponse = {
     count:                   number;
     last_message_created_at: number | null;
     last_message_id:         null | string;
     preview:                 GroupMessagePreview;
 }
 
-export interface GroupMessagePreview {
+export type GroupMessagePreview = {
     attachments:     APIAttachment[];
     deleted_at?:     number;
     deletion_actor?: MessageDeletionMode;

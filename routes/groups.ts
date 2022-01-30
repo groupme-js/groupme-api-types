@@ -21,7 +21,7 @@ export type GetGroupResponse = APIGroup;
  * TODO: pick<> valid fields from APIGroup for this
  * https://github.com/groupme-js/GroupMeCommunityDocs/blob/master/groups.md#create
  */
-export interface PostGroupBody { };
+export type PostGroupBody = { };
 
 /**
  * TODO: should probably set the previews to null since they won't exist yet
@@ -33,7 +33,7 @@ export type PostGroupResponse = APIGroup;
  * TODO: implement
  * https://github.com/groupme-js/GroupMeCommunityDocs/blob/master/groups.md#update
  */
-export interface PatchGroupBody { };
+export type PatchGroupBody = { };
 
 /**
  * https://github.com/groupme-js/GroupMeCommunityDocs/blob/master/groups.md#update
@@ -48,7 +48,7 @@ export type DeleteGroupResponse = never;
 /**
  * https://github.com/groupme-js/GroupMeCommunityDocs/blob/master/groups.md#join
  */
-export interface PostJoinGroupResponse {
+export type PostJoinGroupResponse = {
     group: APIGroup;
 }
 
@@ -60,7 +60,7 @@ export type PostRejoinGroupResponse = APIGroup;
 /**
  * https://github.com/groupme-js/GroupMeCommunityDocs/blob/master/groups.md#change-owners
  */
-export interface PostChangeOwnersBody {
+export type PostChangeOwnersBody = {
     requests: {
         group_id: string;
         owner_id: string;
@@ -70,7 +70,7 @@ export interface PostChangeOwnersBody {
 /**
  * https://github.com/groupme-js/GroupMeCommunityDocs/blob/master/groups.md#change-owners
  */
-export interface PostChangeOwnersResponse {
+export type PostChangeOwnersResponse = {
     results: {
         group_id: string;
         owner_id: string;

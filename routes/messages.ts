@@ -3,7 +3,7 @@ import type { APIGroupMessage } from "../types/APIGroupMessage";
 /**
  * https://github.com/groupme-js/GroupMeCommunityDocs/blob/master/messages.md#index
  */
-export interface GetGroupMessagesQuery {
+export type GetGroupMessagesQuery = {
     before_id?: string;
     since_id?: string;
     after_id?: string;
@@ -13,7 +13,7 @@ export interface GetGroupMessagesQuery {
 /**
  * https://github.com/groupme-js/GroupMeCommunityDocs/blob/master/messages.md#index
  */
-export interface GetGroupMessagesResponse {
+export type GetGroupMessagesResponse = {
     count: number;
     messages: APIGroupMessage[];
 }
@@ -21,7 +21,7 @@ export interface GetGroupMessagesResponse {
 /**
  * TODO: add docs; currently undocumented
  */
-export interface GetGroupMessageResponse {
+export type GetGroupMessageResponse = {
     message: APIGroupMessage;
 }
 
@@ -29,14 +29,14 @@ export interface GetGroupMessageResponse {
  * TODO: figure out which APIMessage fields actually work here
  * https://github.com/groupme-js/GroupMeCommunityDocs/blob/master/messages.md#send-message
  */
-export interface PostGroupMessageBody {
+export type PostGroupMessageBody = {
     message: Pick<APIGroupMessage, "text" | "attachments" | "source_guid">;
 }
 
 /**
  * https://github.com/groupme-js/GroupMeCommunityDocs/blob/master/messages.md#send-message
  */
-export interface PostGroupMessageResponse {
+export type PostGroupMessageResponse = {
     message: APIGroupMessage;
 }
 

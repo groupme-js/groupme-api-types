@@ -8,7 +8,7 @@ export type GetChatsResponse = APIChat[];
 /**
  * https://github.com/groupme-js/GroupMeCommunityDocs/blob/master/dms.md#index-messages
  */
-export interface GetChatMessagesQuery {
+export type GetChatMessagesQuery = {
     other_user_id: string;
     before_id?: string;
     since_id?: string;
@@ -19,7 +19,7 @@ export interface GetChatMessagesQuery {
 /**
  * https://github.com/groupme-js/GroupMeCommunityDocs/blob/master/dms.md#index-messages
  */
-export interface GetChatMessagesResponse {
+export type GetChatMessagesResponse = {
     count: number;
     direct_messages: APIChatMessage[];
     read_receipt?: ReadReceipt;
@@ -36,20 +36,20 @@ export type ReadReceipt = {
 /**
  * TODO: add documentation on GroupMeCommunityDocs
  */
-export interface GetChatMessageResponse {
+export type GetChatMessageResponse = {
     message: APIChatMessage;
 }
 
 /**
  * https://github.com/groupme-js/GroupMeCommunityDocs/blob/master/dms.md#send-dm
  */
-export interface PostChatMessageBody {
+export type PostChatMessageBody = {
     direct_message: Pick<APIChatMessage, "text" | "attachments" | "source_guid" | "recipient_id">;
 }
 
 /**
  * https://github.com/groupme-js/GroupMeCommunityDocs/blob/master/dms.md#send-dm
  */
-export interface PostChatMessageResponse {
+export type PostChatMessageResponse = {
     direct_message: APIChatMessage;
 }

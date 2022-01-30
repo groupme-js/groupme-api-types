@@ -1,10 +1,10 @@
-export interface APIPoll {
+export type APIPoll = {
     data:        PollData;
     user_vote?:  string;
     user_votes?: string[];
 }
 
-export interface PollData {
+export type PollData = {
     conversation_id: string;
     created_at:      number;
     expiration:      number;
@@ -18,7 +18,7 @@ export interface PollData {
     visibility:      PollVisibility;
 }
 
-export interface PollOptionData {
+export type PollOptionData = {
     id:         string;
     title:      string;
     voter_ids?: string[];

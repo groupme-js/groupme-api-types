@@ -1,7 +1,7 @@
 import type { APIAttachment, APIGroupEvent } from "..";
 import type { MessageDeletionActor, MessageSenderType } from "./Constants";
 
-export interface APIGroupMessage {
+export type APIGroupMessage = {
     attachments:     APIAttachment[];
     avatar_url:      null | string;
     created_at:      number;

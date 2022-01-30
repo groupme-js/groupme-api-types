@@ -2,12 +2,12 @@
  * Powerups are GroupMe emojis. This is the format the API uses to describe
  * them when fetched from https://powerup.groupme.com/powerups.
  */
-export interface Powerups {
+export type Powerups = {
     powerups:   Powerup[]
     categories: Category[]
 }
 
-interface Category {
+type Category = {
     id:          string
     name:        string
     description: string
@@ -15,7 +15,7 @@ interface Category {
     powerups:    string[]
 }
 
-interface Powerup {
+type Powerup = {
     id:          string
     name:        string
     description: string
@@ -27,7 +27,7 @@ interface Powerup {
     meta:        Meta
 }
 
-interface Meta {
+type Meta = {
     pack_id:          number
     transliterations: string[]
     background:       []
@@ -38,7 +38,7 @@ interface Meta {
     sticker:          Sticker[]
 }
 
-interface Icon {
+type Icon = {
     image_url: string
     zip_url:   string
     density:   number
@@ -46,14 +46,14 @@ interface Icon {
     y:         number
 }
 
-interface Outline {
+type Outline = {
     folder_url: string
     density:    number
     x:          number
     y:          number
 }
 
-interface Sticker {
+type Sticker = {
     folder_url: string
     zip_url:    string
     density:    number
@@ -61,7 +61,7 @@ interface Sticker {
     y:          number
 }
 
-interface Screenshot {
+type Screenshot = {
     folder_url: string
     image_url:  string
     zip_url:    string
@@ -71,7 +71,7 @@ interface Screenshot {
     y:          number
 }
 
-interface StoreIcon {
+type StoreIcon = {
     image_url: string
     density:   number
     x:         number

@@ -1,7 +1,7 @@
 import type { APIChatMessage, APIUser } from "..";
 import type { MessageDeletionMode } from "./Constants";
 
-export interface APIChat {
+export type APIChat = {
     created_at:              number;
     last_message:            APIChatMessage;
     message_deletion_mode:   MessageDeletionMode[];
