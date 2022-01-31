@@ -1,6 +1,15 @@
 import type { APIGroup } from "../types/APIGroup";
 
 /**
+ * https://github.com/groupme-js/GroupMeCommunityDocs/blob/master/groups.md#index
+ */
+export type GetGroupsQuery = {
+    page?: number;
+    per_page?: number;
+    omit?: 'memberships';
+}
+
+/**
  * TODO: make memberships property optional
  * https://github.com/groupme-js/GroupMeCommunityDocs/blob/master/groups.md#index
  */

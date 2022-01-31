@@ -3,6 +3,14 @@ import type { APIChat, APIChatMessage } from "..";
 /**
  * https://github.com/groupme-js/GroupMeCommunityDocs/blob/master/dms.md#list-existing-dm-channels
  */
+export type ChatsRequestParams = {
+    page?: number;
+    per_page?: number;
+}
+
+/**
+ * https://github.com/groupme-js/GroupMeCommunityDocs/blob/master/dms.md#list-existing-dm-channels
+ */
 export type GetChatsResponse = APIChat[];
 
 /**
