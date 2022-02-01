@@ -31,7 +31,6 @@ export type GetMembersAddResultsResponse = {
 }
 
 /**
- * TODO: does this work with a DELETE request? that would make more sense here
  * https://github.com/groupme-js/GroupMeCommunityDocs/blob/master/members.md#remove-member
  */
 export type PostMemberRemoveBody = never;
@@ -51,7 +50,7 @@ export type PostMemberUpdateBody = {
 }
 
 /**
- * TODO: investigate possible discrepancies
+ * Note: there are some discrepancies between this response object and a normal APIMember
  * https://github.com/groupme-js/GroupMeCommunityDocs/blob/master/members.md#change-nickname
  */
 export type PostMemberUpdateResponse = APIMember;
