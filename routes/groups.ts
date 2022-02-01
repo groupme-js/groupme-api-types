@@ -1,5 +1,27 @@
 import type { APIGroup } from "../types/APIGroup";
 
+type GroupOptions = {
+    type?: "private" | "closed";
+    group_type?: "private" | "closed";
+    requires_approval?: boolean;
+    show_join_question?: boolean;
+    join_question?: {
+        text: string;
+        type: "join_reason/questions/text";
+    };
+    like_icon?: {
+        type: "emoji";
+        pack_id: number;
+        pack_index: number;
+    };
+    theme_name?: string;
+    name?: string;
+    description?: string;
+    image_url?: string;
+    office_mode?: boolean;
+    share?: boolean;
+}
+
 /**
  * https://github.com/groupme-js/GroupMeCommunityDocs/blob/master/groups.md#index
  */
@@ -27,10 +49,9 @@ export type GetGroupsFormerResponse = APIGroup[];
 export type GetGroupResponse = APIGroup;
 
 /**
- * TODO: pick<> valid fields from APIGroup for this
  * https://github.com/groupme-js/GroupMeCommunityDocs/blob/master/groups.md#create
  */
-export type PostGroupBody = { };
+export type PostGroupBody = GroupOptions;
 
 /**
  * TODO: should probably set the previews to null since they won't exist yet
@@ -39,12 +60,12 @@ export type PostGroupBody = { };
 export type PostGroupResponse = APIGroup;
 
 /**
- * TODO: implement
  * https://github.com/groupme-js/GroupMeCommunityDocs/blob/master/groups.md#update
  */
-export type PatchGroupBody = { };
+export type PatchGroupBody = GroupOptions;
 
 /**
+ * Note: there are some [minor discrepancies](https://www.diffchecker.com/PhYuEYdS) in the group object here.
  * https://github.com/groupme-js/GroupMeCommunityDocs/blob/master/groups.md#update
  */
 export type PatchGroupResponse = APIGroup;
