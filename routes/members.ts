@@ -1,6 +1,27 @@
 import type { APIMember } from "../types/APIMember";
 
 /**
+ * TODO: add documentation
+ */
+export type GetMembersQuery = {
+    filter: "active" | "inactive"
+}
+
+/**
+ * TODO: add documentation
+ */
+export type GetActiveMembersResponse = {
+    memberships: (Omit<APIMember, 'muted'> & { muted?: true, state: "active" })[];
+}
+
+/**
+ * TODO: add documentation
+ */
+export type GetFormerMembersResponse = {
+    memberships: (Omit<APIMember, 'muted'> & { muted?: true, state: "exited" | "removed" | "exited_removed" })[];
+}
+
+/**
  * https://github.com/groupme-js/GroupMeCommunityDocs/blob/master/members.md#add-members
  */
 export type PostMembersBody = {
