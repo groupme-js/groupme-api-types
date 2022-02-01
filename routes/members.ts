@@ -26,8 +26,8 @@ export type GetFormerMembersResponse = {
  */
 export type PostMembersBody = {
     members: ({
-        nickname: string;
-        guid: string;
+        nickname?: string;
+        guid?: string;
     } & ( // one of the following must exist in each entry
             | { user_id: string; }
             | { phone_number: string; }
