@@ -45,7 +45,8 @@ export type PostMemberRemoveResponse = never;
  */
 export type PostMemberUpdateBody = {
     membership: {
-        nickname: string;
+        nickname?: string;
+        avatar_url?: string;
     }
 }
 
@@ -53,4 +54,13 @@ export type PostMemberUpdateBody = {
  * Note: there are some discrepancies between this response object and a normal APIMember
  * https://github.com/groupme-js/GroupMeCommunityDocs/blob/master/members.md#change-nickname
  */
-export type PostMemberUpdateResponse = APIMember;
+export type PostMemberUpdateResponse = {
+    id: string;
+    user_id: string;
+    nickname: string;
+    muted: boolean;
+    image_url: string;
+    avatar_url: string;
+    autokicked: boolean;
+    app_installed: boolean;
+};
