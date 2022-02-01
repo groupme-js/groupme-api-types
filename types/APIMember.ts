@@ -1,5 +1,4 @@
 export type APIMember = {
-    autokicked: boolean;
     id:         string;
     image_url:  null | string;
     muted:      boolean;

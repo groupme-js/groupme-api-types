@@ -13,7 +13,7 @@ export type APIGroup = {
     like_icon:                null | GroupLikeIcon;
     max_members:              number;
     max_memberships?:         number;
-    members:                  null | APIMember[];
+    members:                  null | (APIMember & { autokicked: boolean })[];
     message_deletion_mode?:   MessageDeletionMode[];
     message_deletion_period?: number;
     messages:                 GroupMessagesResponse;
