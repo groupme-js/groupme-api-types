@@ -85,6 +85,13 @@ export type PostJoinGroupResponse = {
 /**
  * https://github.com/groupme-js/GroupMeCommunityDocs/blob/master/groups.md#rejoin
  */
+export type PostRejoinGroupBody = {
+    group_id: string;
+}
+
+/**
+ * https://github.com/groupme-js/GroupMeCommunityDocs/blob/master/groups.md#rejoin
+ */
 export type PostRejoinGroupResponse = APIGroup;
 
 /**
