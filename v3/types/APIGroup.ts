@@ -3,6 +3,7 @@ import type { APIMember } from "./APIMember";
 import type { MessageDeletionMode } from "./Constants";
 
 export type APIGroup = {
+    children_count:           number;
     created_at:               number;
     creator_user_id:          string;
     description:              string;
@@ -12,21 +13,19 @@ export type APIGroup = {
     join_question:            null | GroupJoinQuestion;
     like_icon:                null | GroupLikeIcon;
     max_members:              number;
-    max_memberships?:         number;
     members:                  null | (APIMember & { autokicked: boolean })[];
-    message_deletion_mode?:   MessageDeletionMode[];
-    message_deletion_period?: number;
+    members_count:            number;
+    message_deletion_mode:    MessageDeletionMode[];
+    message_deletion_period:  number;
     messages:                 GroupMessagesResponse;
     muted_until?:             number | null;
     name:                     string;
-    office_mode:              boolean;
     phone_number:             null | string;
     requires_approval:        boolean;
     share_qr_code_url:        null | string;
     share_url:                null | string;
     show_join_question:       boolean;
     theme_name:               null | string;
-    thread_id?:               null;
     type:                     GroupType;
     updated_at:               number;
 }
@@ -63,6 +62,7 @@ export type GroupMessagePreview = {
 }
 
 export enum GroupType {
+    Announcement = "announcement",
     Closed = "closed",
     Private = "private",
 }
