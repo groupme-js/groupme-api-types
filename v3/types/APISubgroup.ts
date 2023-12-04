@@ -1,6 +1,6 @@
 import type { GroupLikeIcon, GroupMessagesResponse } from "./APIGroup";
 
-export interface APISubgroup {
+export type APISubgroup = {
     avatar_url:      string;
     created_at:      number;
     creator_user_id: number;
