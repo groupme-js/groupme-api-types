@@ -7,5 +7,6 @@ export * from "./APIGroupEvent";
 export * from "./APIGroupMessage";
 export * from "./APIMember";
 export * from "./APIPoll";
+export * from "./APISubgroup";
 export * from "./APIUser";
 export * from "./powerups";
